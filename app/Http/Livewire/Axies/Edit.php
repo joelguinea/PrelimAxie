@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Axies;
 use App\Models\Axie;
+use App\Events\UserLog;
 use Livewire\Component;
 
 class Edit extends Component
@@ -31,6 +32,8 @@ class Edit extends Component
             'price'                =>      $this->price,
             'color'                =>      $this->color,
         ]);
+        $log_entry = 'Update Axie:"' .$this->axie->axie_name . '"with an ID: '. $this->axie->id;
+        event(new UserLog($log_entry));
 
         return redirect('/axie')->with('axie', 'Updated Successfully');
     }

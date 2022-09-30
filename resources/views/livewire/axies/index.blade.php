@@ -1,6 +1,25 @@
 <div>
     <table class="table table-striped shadow border border-primary">
-        <thead class="bg-danger">
+        <div class="row">
+        <div class="col">
+             <select class="form-select" wire:model.lazy="color">
+                <option value="all">All</option>
+                        <option value="black">Black</option>
+                        <option value="white">White</option>
+                        <option value="blue">Blue</option>
+                        <option value="yellow">Yellow</option>
+                        <option value="red">Red</option>
+                        <option value="pink">Pink</option>
+                    </select>
+             </select>
+        </div>
+        
+        <div class="col">
+            <input type="text" class="form-control" placeholder="Search" wire:model.lazy="search">
+        </div
+        
+        </div>
+        <thead class="bg-danger">   
             <tr>
                 <th>ID No</th>
                 <th>Axie Name</th>
@@ -29,6 +48,7 @@
             @endforeach
         </tbody>
     </table>
+    {{$axies->links()}}
 </div>
 
 <style>

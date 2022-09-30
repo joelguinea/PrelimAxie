@@ -4,6 +4,7 @@ namespace App\Http\Livewire\Axies;
 
 use Livewire\Component;
 use App\Models\Axie;
+use App\Events\UserLog;
 
 class Create extends Component
 {
@@ -17,15 +18,19 @@ class Create extends Component
             'color'                =>          ['required', 'string', 'max:255'],
         ]);
 
-        Axie::create([
+        $axie = Axie::create([
             'axie_name'             =>      $this->axie_name,
             'axie_type'            =>      $this->axie_type,
             'price'                =>      $this->price,
-            'color'                =>      $this->color,
+            'color'                =>      $this->color
         ]);
 
+        $log_entry = 'Added a axie "' . $axie->axie_name . '" with the ID# of ' . $axie->id;
+        event(new UserLog($log_entry));
+    
         return redirect('/axie')->with('axie', 'Added Successfully');
     }
+
 
    
 

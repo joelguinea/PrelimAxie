@@ -2,7 +2,9 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AxieController;
+
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\SiteController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,4 +31,5 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/axie', [AxieController::class, 'index']);
     Route::get('/edit/{axie}', [AxieController::class, 'edit']);
     Route::get('/delete/{axie}', [AxieController::class, 'destroy']);
+    Route::get('/logs', [SiteController::class, 'logs']);
 });

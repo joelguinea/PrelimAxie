@@ -24,7 +24,7 @@
                 @error('price')
                     <p class="text-danger">{{ $message }}</p>
                 @enderror
-</div>
+             </div>
                 <div class="form-floating mb-10000">
                     <select name="color" class="form-select" wire:model.defer="color">
                         <option hidden="true">Select Color</option>

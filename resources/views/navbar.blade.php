@@ -9,6 +9,9 @@
         <li class="nav-item">
           <a class="nav-link text-dark" href="{{ '/axie' }}">Axies</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link text-dark" href="{{ '/logs' }}">Logs</a>
+        </li>
       </ul>
     <div class="collapse navbar-collapse" id="navbarText">
             <a href="{{ '/logout' }}" style="text-decoration: none; margin-right: 10px; color: black; margin-left: 85%"><i class="fa fa-sign-out"></i>&nbsp;Logout</a>
